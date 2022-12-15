@@ -1,17 +1,24 @@
 import React from "react";
-import { Grainy } from "../../styles/Grainy";
 import logo from "../../assets/Studio.png";
+import HomeGallery from "../../components/HomeGallery";
+
+const photos = [
+  { url: "/image1.jpg", title: "Lioness" },
+  { url: "/image2.jpg", title: "Clown" },
+  { url: "/image3.jpg", title: "Funky" },
+  { url: "/image4.jpg", title: "ToothFace" },
+  { url: "/image5.jpg", title: "Maskoff" },
+  { url: "/image6.jpg", title: "HalfBird" },
+];
 
 const Home = () => {
   return (
-    <div
-      data-testid="home"
-      className="flex flex-col h-screen bg-gradient-to-bl from-purple-400 via-pink-400 to-orange-500"
-    >
-      <div className="flex justify-center pt-20 ">
-        {/* <div className="bg-white rounded-xl drop-shadow-lg border border-gray-300 p-2"> */}
-        <img className="w-80" alt="logo" src={logo} />
-        {/* </div> */}
+    <div className="flex flex-col space-y-8 items-center flex-1">
+      <div className="flex justify-center">
+        <img className="w-72" alt="logo" src={logo} draggable={false} />
+      </div>
+      <div className={"h-[32rem] w-[17.5rem] m-[0_auto]"}>
+        <HomeGallery slides={photos} />
       </div>
     </div>
   );
